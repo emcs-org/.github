@@ -11,8 +11,8 @@
 - [Project Scope](#project-scope)
 	- [Subprojects Details](#subprojects-details)
 		- [Sensor Module](#sensor-module)
-		- [Sensor Module](#control-module)
-		- [Sensor Module](#control-panel)
+		- [Control Module](#control-module)
+		- [Control Panel](#control-panel)
 	- [Examples of Usage](#examples-of-usage)
 - [License](#license)
 
