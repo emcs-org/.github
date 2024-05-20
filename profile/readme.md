@@ -79,6 +79,9 @@ The Control Panel is a remote application that serves as an online dashboard for
 Agricultural Use<br>
 In an agricultural setting, the EMCS can be deployed to ensure optimal growing conditions for crops. The Sensor Modules placed in various parts of the fields or greenhouses collect data on soil moisture, temperature, and pH levels. The Control Module analyzes this data and automatically adjusts the irrigation system to provide precise watering, thus conserving water and enhancing crop yield.
 
+Here is the most simple topology example of the system:
+<img src="./example.svg" alt="Example" width="700">
+
 [(to the top)](#environment-monitoring-and-control-system-emcs)
 
 
