@@ -1,105 +1,90 @@
 
-[![Proprietary License](https://img.shields.io/badge/license-emcs_clv1-brightgreen.svg?style=for-the-badge)](./license.md)
+[![License](https://img.shields.io/badge/license-emcs_clv1-brightgreen.svg?style=for-the-badge)](./license.md)
+![Languages](https://img.shields.io/badge/languages-C-brightgreen.svg?style=for-the-badge)
 
 
-# emcs
-**Environmental Monitoring and Control System**
-
+# Environment Monitoring and Control System (EMCS)
 
 ## Table of Contents
-- [Terms and Abbreviations](#terms-and-abbreviations)
 - [Overview](#overview)
 - [Project Objective](#project-objective)
 - [Project Scope](#project-scope)
-	- [System Components](#system-components)
-	- [System Interactions](#system-interactions)
-	- [Project Constraints](#project-constraints)
-	- [Project Risks](#project-risks)
-	- [Project Deliverables](#project-deliverables)
-	- [System Prototype Example](#system-prototype-example)
-- [Getting Started](#getting-started)
-- [Licenses](#licenses)
-
-
-## Terms and Abbreviations
-- **GEMS**: The abbreviation for the project name - Greenhouse Environment Monitoring System.
-- **IP**: Internet Protocol in regard to communication.
-
-[(to the top)](#gems)
+	- [Subprojects Details](#subprojects-details)
+		- [Sensor Module](#sensor-module)
+		- [Sensor Module](#control-module)
+		- [Sensor Module](#control-panel)
+	- [Examples of Usage](#examples-of-usage)
+- [License](#license)
 
 
 ## Overview
-Welcome to the GEMS project. This project aims to create a comprehensive system for monitoring and automating greenhouse conditions to enhance plant growth and sustainability.
+Welcome to the EMCS (Environment Monitoring and Control System) project! This document serves as an extensive introduction to the entire EMCS project, outlining its components, functionality, and benefits. The EMCS project comprises three main subprojects:
+- Sensor Module
+- Control Module
+- Control Panel
 
-[(to the top)](#gems)
+Each subproject plays a crucial role in ensuring accurate data collection, efficient data management, and seamless control of environmental factors.
+
+[(to the top)](#environment-monitoring-and-control-system-emcs)
 
 
 ## Project Objective
-The objective of this project is to design, develop, and implement a Greenhouse Environmental Monitoring System (GEMS). This system aims to provide real-time monitoring, automation, and control of greenhouse conditions, enhancing plant growth and sustainability.
+The primary objective of the Environment Monitoring and Control System (EMCS) project is to develop a comprehensive, integrated solution that enables its users to precisely monitor and control environmental systems. By leveraging advanced sensor technology, robust data management, and user-friendly remote interfaces, EMCS aims to enhance operational efficiency, optimize resource utilization, and ensure optimal environmental conditions in various settings such as agriculture, industrial facilities, and research laboratories. The system is designed to provide real-time insights, automate control processes, and facilitate remote management.
 
-[(to the top)](#gems)
+[(to the top)](#environment-monitoring-and-control-system-emcs)
+
 
 ## Project Scope
-As this project consists of many components, here is the scope of the project:
-
-[(to the top)](#gems)
-
-### System Components
-The Greenhouse Environmental Monitoring System will consist of several components:
-- **Sensor(s)**: The system will integrate industry-standard sensors supporting the CAN protocol for monitoring various environmental metrics, including air temperature, humidity, oxygen, carbon dioxide levels, soil humidity, and soil pH levels.
-- **Control Unit(s)**: The control unit will be responsible for collecting data from the sensors, forwarding it to the remote monitoring system, and managing the local greenhouse network. Equipped with 2 CAN and an Ethernet adapters, it will bridge the sensors with the remote management system.
-- **Remote User Interface**: A remote management system, similar to Home Assistant, accessible via a web-based dashboard or a standalone application that connects to the control unit through an IP connection. It enables users to manage the entire system remotely.
-- **Maintenance Interface**: A display and control unit that can be dynamically connected to the Control Unit via the second CAN port to review, configure, and fix the system on the spot.
-
-[(to the top)](#gems)
-
-### System Interactions
-The components of the system interact as follows:
-- **Sensor(s)**: Exclusively communicate via the CAN bus with the Control Unit.
-- **Control Unit(s)**: Communicate with sensors via CAN bus and interface with the remote user interface via IP connection.
-- **Remote User Interface**: Interfaces with the Control Unit through the IP protocol.
-- **Maintenance Interface**: Interfaces with the Control Unit via CAN.
-
-[(to the top)](#gems)
-
-### Project Constraints
-- Hardware component selection and compatibility.
-- Third-party sensor availability.
-- Development and integration of firmware and software.
-- User interface design and implementation.
-- Network and communication protocols.
-- Environmental impact, including waste management and energy consumption, in accordance with local legal policies.
-
-[(to the top)](#gems)
-
-### Project Risks
-- Sensor compatibility and availability.
-- Development and integration challenges.
-- Technical issues with communication protocols.
-- User interface design and usability.
-- Project timeline and resource constraints.
-
-[(to the top)](#gems)
-
-### Project Deliverables
-- Functional and fully tested Greenhouse Environmental Monitoring System.
-- User Manual and System Documentation.
-
-[(to the top)](#gems)
-
-### System Prototype Example
-<img src="./example.svg" alt="Example" width="800">
-
-[(to the top)](#gems)
+The scope of the EMCS project encompasses the design, development, and implementation of three core subprojects: the Sensor Module, Control Module, and Control Panel. These components will enable comprehensive monitoring and control of soil and air parameters, facilitating data collection, analysis, and system management.
+The project will focus on delivering a scalable and adaptable solution suitable for diverse organizational environments, with the potential for integration with third-party systems to enhance functionality and interoperability.
 
 
-## Getting Started
-todo!
+### Subprojects Details
+#### Sensor Module
+The Sensor Module is a product responsible for gathering critical environmental data. It is equipped with various sensors to measure:
+- Soil Temperature. Monitors the temperature of the soil to ensure optimal conditions for plant growth.
+- Soil Moisture Levels. Measures the moisture content in the soil to prevent overwatering or drought conditions.
+- Soil pH Levels. Tracks the acidity or alkalinity of the soil to maintain a balanced environment for vegetation.
+- Air Temperature. Records the ambient air temperature to help manage climate conditions.
+- Oxygen Levels in the Air. Monitors oxygen levels to ensure adequate ventilation and air quality.
+- Carbon Dioxide Levels in the Air. Measures CO2 levels to manage plant respiration and air quality.
+- Air Humidity. Tracks humidity levels to maintain an ideal environment for plants and equipment.
 
-[(to the top)](#gems)
+The Sensor Module features an e-paper display that shows the collected metrics in real-time and transmits this data via a CAN FD (Controller Area Network Flexible Data-rate) bus to the Control Module.
+
+[(to the top)](#environment-monitoring-and-control-system-emcs)
+
+#### Control Module
+The Control Module is the central hub of the EMCS. It collects data from multiple Sensor Modules via the CAN FD communication protocol. Its primary functions include:
+- Data Collection. Aggregates metrics from various sensors for comprehensive environmental monitoring.
+- Data Storage. Maintains a record of all collected data for historical analysis and reporting.
+- Data Analysis. Utilizes advanced algorithms to analyze the collected data and provide actionable insights.
+- System Control. Manages and controls the entire system, including the Sensor Modules and potential third-party integrated systems.
+
+For example, the Control Module can integrate with an automated watering system. Using the data collected, it can manage watering schedules and amounts via a separate CAN FD line, ensuring optimal soil moisture levels without manual intervention.
+
+[(to the top)](#environment-monitoring-and-control-system-emcs)
+
+#### Control Panel
+The Control Panel is a remote application that serves as an online dashboard for the EMCS. It provides users with an interface to interact with the system's Control Module from anywhere via the internet. Key features of the Control Panel include:
+- System Configuration. Allows users to configure settings for both the Control Module and Sensor Modules.
+- Remote Management. Enables users to monitor and control the system remotely, ensuring flexibility and convenience.
+- Data Visualization. Offers detailed graphs and reports to help users understand environmental conditions and trends.
+- Alerts and Notifications. Sends alerts and notifications based on predefined conditions or anomalies detected in the environment.
+
+[(to the top)](#environment-monitoring-and-control-system-emcs)
 
 
-## Licenses
-todo!
+### Examples of Usage
+Agricultural Use<br>
+In an agricultural setting, the EMCS can be deployed to ensure optimal growing conditions for crops. The Sensor Modules placed in various parts of the fields or greenhouses collect data on soil moisture, temperature, and pH levels. The Control Module analyzes this data and automatically adjusts the irrigation system to provide precise watering, thus conserving water and enhancing crop yield.
 
-[(to the top)](#gems)
+[(to the top)](#environment-monitoring-and-control-system-emcs)
+
+
+## License
+The EMCS project is released under the **emcs clv1** license. Users and contributors are required to review and comply with the license terms specified in the [license.md file](./license.md). The license outlines the permitted usage, distribution, and intellectual property rights associated with this project.
+
+Please refer to the [license.md file](./license.md) for more details. By using, modifying, or distributing this project, you agree to be bound by the terms and conditions of the license.
+
+[(to the top)](#environment-monitoring-and-control-system-emcs)
