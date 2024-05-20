@@ -1,7 +1,5 @@
 
 [![License](https://img.shields.io/badge/license-emcs_clv1-brightgreen.svg?style=for-the-badge)](./license.md)
-![Languages](https://img.shields.io/badge/languages-C-brightgreen.svg?style=for-the-badge)
-
 
 # Environment Monitoring and Control System (EMCS)
 
